@@ -84,15 +84,12 @@
     description = "safe";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
-      git
-      vscode
       kdePackages.dolphin
     ];
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -107,6 +104,7 @@
      waybar
      swww
      hyprlock
+     nixfmt-rfc-style
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

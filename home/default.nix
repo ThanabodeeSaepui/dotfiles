@@ -10,6 +10,7 @@
 
   home-manager.users.safe = {
     imports = [
+      ./hyprland
       ./programs
     ];
 

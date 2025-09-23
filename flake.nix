@@ -1,6 +1,4 @@
 {
-  description = "A very basic flake";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     hyprland = {
@@ -18,7 +16,11 @@
     nixpkgs, 
     home-manager,
     ... 
-  }@inputs: {
+  }@inputs: 
+  let
+    # system = builtins.currentSystem;
+  in
+  {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };

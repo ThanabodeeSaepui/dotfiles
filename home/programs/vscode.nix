@@ -1,0 +1,20 @@
+{ pkgs, ... }:
+{
+  programs.vscode = {
+    enable = true;
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        # Nix
+        jnoortheen.nix-ide
+        arrterian.nix-env-selector
+
+        # Icon Theme
+        pkief.material-icon-theme
+      ];
+
+      userSettings = {
+        "workbench.iconTheme" = "material-icon-theme";
+      };
+    };
+  };
+}
