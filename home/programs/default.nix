@@ -2,6 +2,7 @@
   imports = [
     ./dunst
     ./git
+    ./hyprland
     ./rofi
     ./vscode
     ./waybar

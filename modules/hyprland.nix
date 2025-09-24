@@ -11,4 +11,24 @@
     portalPackage =
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      hyprland = {
+        prettyName = "Hyprland";
+        comment = "Hyprland compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+    };
+  };
+
+  services.displayManager = {
+    defaultSession = "hyprland-uwsm";
+    sddm = {
+      enable = true;
+      enableHidpi = true;
+      wayland.enable = true;
+    };
+  };
 }
