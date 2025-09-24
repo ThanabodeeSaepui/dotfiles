@@ -1,4 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -10,7 +16,6 @@
 
   home-manager.users.safe = {
     imports = [
-      ./hyprland
       ./programs
     ];
 
@@ -20,6 +25,10 @@
       username = "safe";
       homeDirectory = "/home/safe";
     };
+
+    home.packages = with pkgs; [
+
+    ];
 
     programs = {
       home-manager.enable = true;

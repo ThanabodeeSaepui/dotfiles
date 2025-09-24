@@ -11,23 +11,24 @@
     };
   };
 
-  outputs = { 
-    self, 
-    nixpkgs, 
-    home-manager,
-    ... 
-  }@inputs: 
-  let
-    # system = builtins.currentSystem;
-  in
-  {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [ 
-        ./configuration.nix
-        ./home
-      ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      # system = builtins.currentSystem;
+    in
+    {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
+          ./home
+        ];
+      };
     };
-  };
 }
