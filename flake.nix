@@ -9,6 +9,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sddm-sugar-candy-nix = {
+      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -16,6 +21,7 @@
       self,
       nixpkgs,
       home-manager,
+      sddm-sugar-candy-nix,
       ...
     }@inputs:
     let
@@ -28,6 +34,7 @@
         modules = [
           ./configuration.nix
           ./home
+          sddm-sugar-candy-nix.nixosModules.default
         ];
       };
     };
