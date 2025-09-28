@@ -3,6 +3,7 @@
     ./dunst
     ./git
     ./hyprland
+    ./hyprlock
     ./rofi
     ./vscode
     ./waybar
