@@ -16,6 +16,7 @@
 
   home-manager.users.safe = {
     imports = [
+      ./packages
       ./programs
     ];
 
