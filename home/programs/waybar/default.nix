@@ -13,186 +13,148 @@
       target = "graphical-session.target";
     };
     style = ''
-             * {
-               font-family: "JetBrainsMono Nerd Font";
-               font-size: 12pt;
-               font-weight: bold;
-               border-radius: 8px;
-               transition-property: background-color;
-               transition-duration: 0.5s;
-             }
-             @keyframes blink_red {
-               to {
-                 background-color: rgb(242, 143, 173);
-                 color: rgb(26, 24, 38);
-               }
-             }
-             .warning, .critical, .urgent {
-               animation-name: blink_red;
-               animation-duration: 1s;
-               animation-timing-function: linear;
-               animation-iteration-count: infinite;
-               animation-direction: alternate;
-             }
-             window#waybar {
-               background-color: transparent;
-             }
-             window > box {
-               margin-left: 5px;
-               margin-right: 5px;
-               margin-top: 5px;
-               background-color: #1e1e2a;
-               padding: 3px;
-               padding-left:8px;
-               border: 2px none #33ccff;
-             }
-       #workspaces {
-               padding-left: 0px;
-               padding-right: 4px;
-             }
-       #workspaces button {
-               padding-top: 5px;
-               padding-bottom: 5px;
-               padding-left: 6px;
-               padding-right: 6px;
-             }
-       #workspaces button.active {
-               background-color: rgb(181, 232, 224);
-               color: rgb(26, 24, 38);
-             }
-       #workspaces button.urgent {
-               color: rgb(26, 24, 38);
-             }
-       #workspaces button:hover {
-               background-color: rgb(248, 189, 150);
-               color: rgb(26, 24, 38);
-             }
-             tooltip {
-               background: rgb(48, 45, 65);
-             }
-             tooltip label {
-               color: rgb(217, 224, 238);
-             }
-       #custom-launcher {
-               font-size: 20px;
-               padding-left: 8px;
-               padding-right: 6px;
-               color: #7ebae4;
-             }
-       #mode, #clock, #memory, #temperature,#cpu,#mpd, #custom-wall, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-cava-internal {
-               padding-left: 10px;
-               padding-right: 10px;
-             }
-             /* #mode { */
-             /* 	margin-left: 10px; */
-             /* 	background-color: rgb(248, 189, 150); */
-             /*     color: rgb(26, 24, 38); */
-             /* } */
-       #memory {
-               color: rgb(181, 232, 224);
-             }
-       #cpu {
-               color: rgb(245, 194, 231);
-             }
-       #clock {
-               color: rgb(217, 224, 238);
-             }
-      /* #idle_inhibitor {
-               color: rgb(221, 182, 242);
-             }*/
-       #custom-wall {
-               color: #33ccff;
-          }
-       #temperature {
-               color: rgb(150, 205, 251);
-             }
-       #backlight {
-               color: rgb(248, 189, 150);
-             }
-       #pulseaudio {
-               color: rgb(245, 224, 220);
-             }
-       #network {
-               color: #ABE9B3;
-             }
-       #network.disconnected {
-               color: rgb(255, 255, 255);
-             }
-       #custom-powermenu {
-               color: rgb(242, 143, 173);
-               padding-right: 8px;
-             }
-       #tray {
-               padding-right: 8px;
-               padding-left: 10px;
-             }
-       #mpd.paused {
-               color: #414868;
-               font-style: italic;
-             }
-       #mpd.stopped {
-               background: transparent;
-             }
-       #mpd {
-               color: #c0caf5;
-             }
-       #custom-cava-internal{
-               font-family: "Hack Nerd Font" ;
-               color: #33ccff;
-             }
+      * {
+        font-family: "Jetbrains Mono NerdFont";
+      }
+
+      #waybar {
+        /* background: #171717; */
+        background: #0a0a0a;
+        color: #fff;
+      }
+
+      #clock {
+        color: #fff;
+      }
+
+      #tray {
+        padding-left: 4px;
+      }
+
+      #workspaces button:hover {
+        background-color: transparent;
+      }
+
+      #workspaces button {
+        color: #737373;
+        padding-left: 4px;
+        padding-right: 4px;
+        border-radius: 0px;
+      }
+
+      #workspaces button:hover {
+        background-color: #262626;
+      }
+
+      #workspaces button.active {
+        color: #84cc16;
+      }
+
+      #window {
+        color: #fff;
+      }
+
+      #network {
+        color: #3b82f6;
+        margin-right: 8px;
+      }
+
+      #pulseaudio {
+        color: #14b8a6;
+        margin-right: 4px;
+      }
+
+      #cpu {
+        color: #0ea5e9;
+        margin-right: 4px;
+      }
+
+      #temperature {
+        color: #eab308;
+        margin-right: 4px;
+      }
+
+      #memory {
+        color: #d946ef;
+        margin-right: 4px;
+      }
+
+      #custom-powermenu {
+        color: #f43f5e;
+      }
     '';
     settings = [
       {
         "layer" = "top";
         "position" = "top";
+        "margin-bottom" = 0;
         modules-left = [
-          "custom/launcher"
-          "temperature"
-          "mpd"
-          "custom/cava-internal"
-        ];
-        modules-center = [
           "clock"
-        ];
-        modules-right = [
-          "pulseaudio"
-          "backlight"
-          "memory"
-          "cpu"
-          "network"
-          "custom/powermenu"
+          "custom/separator"
+          "hyprland/workspaces"
+          "custom/separator"
           "tray"
         ];
-        "custom/launcher" = {
-          "format" = " ";
-          "on-click" = "pkill rofi || rofi2";
-          "on-click-middle" = "exec default_wall";
-          "on-click-right" = "exec wallpaper_random";
-          "tooltip" = false;
-        };
-        "custom/cava-internal" = {
-          "exec" = "sleep 1s && cava-internal";
-          "tooltip" = false;
-        };
-        "pulseaudio" = {
-          "scroll-step" = 1;
-          "format" = "{icon} {volume}%";
-          "format-muted" = "󰖁 Muted";
-          "format-icons" = {
-            "default" = [
-              ""
-              ""
-              ""
-            ];
-          };
-          "on-click" = "pamixer -t";
-          "tooltip" = false;
+        modules-center = [
+          "hyprland/window"
+        ];
+        modules-right = [
+          "temperature"
+          "memory"
+          "cpu"
+          "pulseaudio"
+          "battery"
+          "network"
+          "custom/separator"
+          "custom/powermenu"
+        ];
+        "tray" = {
+          "icon-size" = 16;
+          "spacing" = 8;
         };
         "clock" = {
-          "interval" = 1;
-          "format" = "{:%I:%M %p  %A %b %d}";
+          # "interval" = 1;
+          # "format" = "{:%I:%M %p  %A %b %d}";
+          # "tooltip" = true;
+          # "tooltip-format" = "{=%A; %d %B %Y}\n<tt>{calendar}</tt>";
+          "format" = " 󰸗 {:%I:%M %p} ";
+          "interval" = 60;
           "tooltip" = true;
-          "tooltip-format" = "{=%A; %d %B %Y}\n<tt>{calendar}</tt>";
+          "tooltip-format" = "{:%d %B %H:%M}";
+        };
+        "hyprland/workspaces" = {
+          "format" = "{icon}";
+          "separate-outputs" = false;
+          "active-only" = false;
+          # turn on true to show same all workspaces on each monitor
+          "all-outputs" = false;
+          "format-icons" = {
+            # 1-10
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
+            "6" = "6";
+            "7" = "7";
+            "8" = "8";
+            "9" = "9";
+            "10" = "10";
+            # 11-10
+            "11" = "1";
+            "12" = "2";
+            "13" = "3";
+            "14" = "4";
+            "15" = "5";
+            "16" = "6";
+            "17" = "7";
+            "18" = "8";
+            "19" = "9";
+            "110" = "10";
+          };
+        };
+        "hyprland/window" = {
+          "format" = "{}";
         };
         "memory" = {
           "interval" = 1;
@@ -227,14 +189,21 @@
           "interval" = 1;
           "tooltip" = false;
         };
-        "custom/powermenu" = {
-          "format" = "";
-          "on-click" = "pkill rofi || ~/.config/rofi/powermenu/type-3/powermenu.sh";
-          "tooltip" = false;
+
+        "battery" = {
+          "format" = "{capacity}% {icon}";
+          "format-icons" = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
-        "tray" = {
-          "icon-size" = 15;
-          "spacing" = 5;
+        "custom/powermenu" = {
+          "format" = "  ";
+          "tooltip" = false;
+          "on-click" = "exec wlogout -p layer-shell";
         };
       }
     ];
