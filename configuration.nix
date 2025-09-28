@@ -113,7 +113,6 @@
     #  wget
     kitty
     swww
-    hyprlock
     nixfmt-rfc-style
   ];
 
