@@ -2,6 +2,7 @@
   imports = [
     ./dunst
     ./git
+    ./hypridle
     ./hyprland
     ./hyprlock
     ./rofi
