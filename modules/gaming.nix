@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.steam = {
     enable = true;
@@ -17,5 +17,10 @@
   environment.systemPackages = with pkgs; [
     mangohud # Performance monitoring overlay for games
     lutris # Game manager for Linux
+    protonup
   ];
+
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+  };
 }

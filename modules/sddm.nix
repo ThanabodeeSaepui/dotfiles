@@ -8,7 +8,7 @@
       wayland.enable = true;
 
       sugarCandyNix = {
-          enable = true; 
+        enable = true;
       };
     };
   };

@@ -45,4 +45,19 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  hardware.nvidia.prime = {
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
+
+    # nix shell nixpkgs#pciutils -c lspci | grep VGA
+
+    # integrated
+    intelBusId = "PCI:00:02:0";
+
+    # dedicated
+    nvidiaBusId = "PCI:01:00:0";
+  };
 }
