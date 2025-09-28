@@ -14,7 +14,7 @@
     };
     style = ''
       * {
-        font-family: "Jetbrains Mono NerdFont";
+        font-family: "Jetbrains Mono NerdFont Propo";
       }
 
       #waybar {
