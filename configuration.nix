@@ -114,8 +114,6 @@
     kitty
     swww
     nixfmt-rfc-style
-
-    wg-manager
   ];
 
   fonts = {
