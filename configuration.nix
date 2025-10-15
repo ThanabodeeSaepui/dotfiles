@@ -60,8 +60,8 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    layout = "us,th";
+    options = "grp:win_space_toggle";  # Super+Space to switch
   };
 
   # Enable CUPS to print documents.
@@ -114,6 +114,8 @@
     kitty
     swww
     nixfmt-rfc-style
+
+    wg-manager
   ];
 
   fonts.packages = with pkgs; [

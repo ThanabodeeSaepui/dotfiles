@@ -10,6 +10,11 @@
 
         # Icon Theme
         pkief.material-icon-theme
+
+        # File extension
+        tamasfe.even-better-toml
+
+        fill-labs.dependi
       ];
 
       userSettings = {
