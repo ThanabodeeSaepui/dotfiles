@@ -61,7 +61,7 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us,th";
-    options = "grp:win_space_toggle";  # Super+Space to switch
+    options = "grp:win_space_toggle"; # Super+Space to switch
   };
 
   # Enable CUPS to print documents.
@@ -114,13 +114,37 @@
     kitty
     swww
     nixfmt-rfc-style
-
-    wg-manager
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      sarabun-font
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        sansSerif = [
+          "JetBrainsMono Nerd Font"
+          "Sarabun"
+          "Noto Sans Thai"
+        ];
+        monospace = [
+          "JetBrainsMono Nerd Font Mono"
+          "Sarabun"
+          "Noto Sans Thai"
+        ];
+        serif = [
+          "Noto Serif"
+          "Noto Serif Thai"
+        ];
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
