@@ -19,6 +19,7 @@
 
       userSettings = {
         "workbench.iconTheme" = "material-icon-theme";
+        "terminal.integrated.defaultProfile.linux" = "zsh";
       };
     };
   };

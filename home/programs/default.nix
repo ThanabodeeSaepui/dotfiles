@@ -6,6 +6,7 @@
     ./hypridle
     ./hyprland
     ./hyprlock
+    ./kitty
     ./rofi
     ./vscode
     ./waybar
