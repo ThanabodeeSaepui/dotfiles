@@ -28,7 +28,17 @@
     };
 
     home.packages = with pkgs; [
+      # Apps
       signal-desktop
+      discord
+
+      # Screenshot
+      grim
+      slurp
+
+      # Clipboard
+      wl-clipboard
+      
     ];
 
     programs = {

@@ -146,6 +146,9 @@
         "$mainMod,R,exec,$menu"
         "$mainMod,P,pseudo," # dwindle
         "$mainMod,J,togglesplit," # dwindle
+
+        # Screenshot
+        "$mainMod SHIFT, S, exec, ''grim -g \"$(slurp)\" - | wl-copy''"
         
         # Move focus with arrow keys
         "$mainMod,left,movefocus,l"
@@ -179,7 +182,7 @@
         
         # Special workspace (scratchpad)
         "$mainMod,S,togglespecialworkspace,magic"
-        "$mainMod SHIFT,S,movetoworkspace,special:magic"
+        # "$mainMod SHIFT,S,movetoworkspace,special:magic"
         
         # Scroll through workspaces
         "$mainMod,mouse_down,workspace,e+1"
