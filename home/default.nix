@@ -38,11 +38,16 @@
 
       # Clipboard
       wl-clipboard
-      
+
     ];
 
     programs = {
       home-manager.enable = true;
+      brave.enable = true;
+    };
+    services = {
+      blueman-applet.enable = true;
+      network-manager-applet.enable = true;
     };
   };
 }

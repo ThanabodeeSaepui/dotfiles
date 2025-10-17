@@ -6,10 +6,6 @@
       enable = true;
       enableHidpi = true;
       wayland.enable = true;
-
-      sugarCandyNix = {
-        enable = true;
-      };
     };
   };
 }

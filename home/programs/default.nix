@@ -12,6 +12,4 @@
     ./waybar
     ./wlogout
   ];
-
-  programs.brave.enable = true;
 }

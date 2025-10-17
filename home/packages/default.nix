@@ -8,5 +8,7 @@
   home.packages = with pkgs; [
     bat
     btop
+
+    pamixer # Pulseaudio command line mixer
   ];
 }
