@@ -13,6 +13,7 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
+  home-manager.extraSpecialArgs = { inherit inputs; };
 
   home-manager.users.safe = {
     imports = [
@@ -29,8 +30,13 @@
 
     home.packages = with pkgs; [
       # Apps
+      vlc
       signal-desktop
-      discord
+      thunderbird
+      (discord.override {
+        withOpenASAR = true;
+        withVencord = true;
+      })
 
       # Screenshot
       grim
@@ -39,11 +45,14 @@
       # Clipboard
       wl-clipboard
 
+      vdhcoapp
     ];
 
     programs = {
       home-manager.enable = true;
       brave.enable = true;
+      librewolf.enable = true;
+      obs-studio.enable = true;
     };
     services = {
       blueman-applet.enable = true;

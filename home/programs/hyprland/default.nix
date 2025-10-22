@@ -3,30 +3,30 @@
     enable = true;
     package = null;
     portalPackage = null;
-    
+
     settings = {
       # Monitor configuration
       monitor = ",preferred,auto,1";
-      
+
       # Program definitions
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "rofi -show drun";
       "$mainMod" = "SUPER";
-      
+
       # Autostart programs
       exec-once = [
         "swww init &"
         "waybar &"
         "dunst &"
       ];
-      
+
       # Environment variables
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
       ];
-      
+
       # General settings
       general = {
         gaps_in = 5;
@@ -38,21 +38,21 @@
         allow_tearing = false;
         layout = "dwindle";
       };
-      
+
       # Decoration settings
       decoration = {
         rounding = 10;
         rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-        
+
         shadow = {
           enabled = true;
           range = 4;
           render_power = 3;
           color = "rgba(1a1a1aee)";
         };
-        
+
         blur = {
           enabled = true;
           size = 3;
@@ -60,11 +60,11 @@
           vibrancy = 0.1696;
         };
       };
-      
+
       # Animation settings
       animations = {
         enabled = "yes, please :)";
-        
+
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
           "easeInOutCubic,0.65,0.05,0.36,1"
@@ -72,7 +72,7 @@
           "almostLinear,0.5,0.5,0.75,1"
           "quick,0.15,0,0.1,1"
         ];
-        
+
         animation = [
           "global,1,10,default"
           "border,1,5.39,easeOutQuint"
@@ -93,47 +93,49 @@
           "zoomFactor,1,7,quick"
         ];
       };
-      
+
       # Layout settings
       dwindle = {
         pseudotile = true;
         preserve_split = true;
       };
-      
+
       master = {
         new_status = "master";
       };
-      
+
       # Misc settings
       misc = {
         force_default_wallpaper = -1;
         disable_hyprland_logo = false;
       };
-      
+
       # Input settings
       input = {
         kb_layout = "us,th";
         kb_variant = "";
         kb_model = "";
-        kb_options = "grp:win_space_toggle";  # Super+Space
+        kb_options = "grp:win_space_toggle"; # Super+Space
         kb_rules = "";
         follow_mouse = 1;
         sensitivity = 0;
-        
+
         touchpad = {
           natural_scroll = true;
         };
+
+        scroll_method = "on_button_down";
       };
-      
+
       # Gestures
       gesture = "3,horizontal,workspace";
-      
+
       # Per-device config
       device = {
         name = "epic-mouse-v1";
         sensitivity = -0.5;
       };
-      
+
       # Keybindings
       bind = [
         # Basic binds
@@ -149,13 +151,16 @@
 
         # Screenshot
         "$mainMod SHIFT, S, exec, ''grim -g \"$(slurp)\" - | wl-copy''"
-        
+
+        # Lockscreen
+        "$mainMod,L,exec,hyprlock"
+
         # Move focus with arrow keys
         "$mainMod,left,movefocus,l"
         "$mainMod,right,movefocus,r"
         "$mainMod,up,movefocus,u"
         "$mainMod,down,movefocus,d"
-        
+
         # Switch workspaces
         "$mainMod,1,workspace,1"
         "$mainMod,2,workspace,2"
@@ -167,7 +172,7 @@
         "$mainMod,8,workspace,8"
         "$mainMod,9,workspace,9"
         "$mainMod,0,workspace,10"
-        
+
         # Move windows to workspaces
         "$mainMod SHIFT,1,movetoworkspace,1"
         "$mainMod SHIFT,2,movetoworkspace,2"
@@ -179,22 +184,22 @@
         "$mainMod SHIFT,8,movetoworkspace,8"
         "$mainMod SHIFT,9,movetoworkspace,9"
         "$mainMod SHIFT,0,movetoworkspace,10"
-        
+
         # Special workspace (scratchpad)
         "$mainMod,S,togglespecialworkspace,magic"
         # "$mainMod SHIFT,S,movetoworkspace,special:magic"
-        
+
         # Scroll through workspaces
         "$mainMod,mouse_down,workspace,e+1"
         "$mainMod,mouse_up,workspace,e-1"
       ];
-      
+
       # Mouse binds
       bindm = [
         "$mainMod,mouse:272,movewindow"
         "$mainMod,mouse:273,resizewindow"
       ];
-      
+
       # Volume and brightness binds
       bindel = [
         ",XF86AudioRaiseVolume,exec,wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
@@ -204,7 +209,7 @@
         ",XF86MonBrightnessUp,exec,brightnessctl -e4 -n2 set 5%+"
         ",XF86MonBrightnessDown,exec,brightnessctl -e4 -n2 set 5%-"
       ];
-      
+
       # Media control binds
       bindl = [
         ",XF86AudioNext,exec,playerctl next"
@@ -212,7 +217,7 @@
         ",XF86AudioPlay,exec,playerctl play-pause"
         ",XF86AudioPrev,exec,playerctl previous"
       ];
-      
+
       # Window rules
       windowrule = [
         "suppressevent maximize,class:.*"

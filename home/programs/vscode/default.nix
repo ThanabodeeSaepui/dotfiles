@@ -15,6 +15,11 @@
         tamasfe.even-better-toml
 
         fill-labs.dependi
+
+        # Language Server
+        rust-lang.rust-analyzer
+        ms-python.python
+        ms-python.debugpy
       ];
 
       userSettings = {

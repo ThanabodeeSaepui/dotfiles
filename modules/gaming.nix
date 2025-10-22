@@ -15,7 +15,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    mangohud # Performance monitoring overlay for games
     lutris # Game manager for Linux
     protonup
   ];
