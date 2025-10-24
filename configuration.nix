@@ -32,6 +32,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.nameservers = [ ];
 
   # Set your time zone.
   time.timeZone = "Asia/Bangkok";
@@ -84,6 +85,13 @@
     #media-session.enable = true;
   };
 
+  services.resolved = {
+    enable = true;
+    dnssec = "allow-downgrade";  # or "yes" if you want strict DNSSEC
+    fallbackDns = [ "1.1.1.1" "1.0.0.1" ];  # Cloudflare DNS
+  };
+  environment.etc."resolv.conf".source = "/run/systemd/resolve/stub-resolv.conf";
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -94,6 +102,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       kdePackages.dolphin
@@ -122,6 +131,8 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
+
+      corefonts
     ];
 
     fontconfig = {

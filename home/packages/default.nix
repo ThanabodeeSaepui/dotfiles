@@ -10,5 +10,7 @@
     btop
 
     pamixer # Pulseaudio command line mixer
+    p7zip
+    bottles
   ];
 }

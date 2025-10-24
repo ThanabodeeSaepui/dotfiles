@@ -6,5 +6,6 @@
     ./hyprland.nix
     ./nix.nix
     ./sddm.nix
+    ./virtualisation.nix
   ];
 }

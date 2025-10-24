@@ -15,7 +15,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    lutris # Game manager for Linux
     protonup
   ];
 
