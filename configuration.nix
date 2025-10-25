@@ -20,8 +20,21 @@
   # boot.loader.grub.efiSupport = true;
   # boot.loader.grub.useOSProber = true;
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+    grub = {
+      enable = true;
+      efiSupport = true;
+      # efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
+      device = "nodev";
+    };
+    # systemd-boot.enable = true;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -87,8 +100,11 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";  # or "yes" if you want strict DNSSEC
-    fallbackDns = [ "1.1.1.1" "1.0.0.1" ];  # Cloudflare DNS
+    dnssec = "allow-downgrade"; # or "yes" if you want strict DNSSEC
+    fallbackDns = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ]; # Cloudflare DNS
   };
   environment.etc."resolv.conf".source = "/run/systemd/resolve/stub-resolv.conf";
 

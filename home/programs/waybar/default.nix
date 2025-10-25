@@ -113,14 +113,14 @@
           "spacing" = 8;
         };
         "clock" = {
-          # "interval" = 1;
-          # "format" = "{:%I:%M %p  %A %b %d}";
-          # "tooltip" = true;
-          # "tooltip-format" = "{=%A; %d %B %Y}\n<tt>{calendar}</tt>";
-          "format" = " 󰸗 {:%I:%M %p} ";
+          "format" = "󰸗 {:%d %b %Y | %I:%M %p}";
           "interval" = 60;
           "tooltip" = true;
-          "tooltip-format" = "{:%d %B %H:%M}";
+          "tooltip-format" = "<tt><small>{calendar}</small></tt>";
+          "calendar" = {
+            "mode" = "month";
+            "on-scroll" = 1;
+          };
         };
         "hyprland/workspaces" = {
           "format" = "{icon}";
