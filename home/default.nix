@@ -8,6 +8,7 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.nur.modules.nixos.default
   ];
 
   home-manager.useGlobalPkgs = true;
@@ -45,6 +46,7 @@
       wl-clipboard
 
       vdhcoapp
+      nur.repos.charmbracelet.crush
     ];
 
     programs = {

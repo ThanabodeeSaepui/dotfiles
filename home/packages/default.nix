@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./development.nix
     ./fzf.nix
     ./zoxide.nix
     ./zsh.nix
