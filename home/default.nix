@@ -45,6 +45,9 @@
       # Clipboard
       wl-clipboard
 
+      # Cursor
+      bibata-cursors
+
       vdhcoapp
       nur.repos.charmbracelet.crush
     ];

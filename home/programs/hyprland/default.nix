@@ -19,6 +19,7 @@
         "swww init &"
         "waybar &"
         "dunst &"
+        "hyprctl setcursor Bibata-Modern-Ice 24"
       ];
 
       # Environment variables
