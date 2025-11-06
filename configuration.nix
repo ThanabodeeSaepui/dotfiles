@@ -146,7 +146,7 @@
       sarabun-font
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
 
       corefonts
     ];
