@@ -35,6 +35,8 @@
     };
     # systemd-boot.enable = true;
   };
+  
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -100,11 +102,13 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade"; # or "yes" if you want strict DNSSEC
-    fallbackDns = [
-      "1.1.1.1"
-      "1.0.0.1"
-    ]; # Cloudflare DNS
+    settings.Resolve = {
+      DNSSEC = "allow-downgrade";
+      FallbackDNS = [
+        "1.1.1.1"
+        "1.0.0.1"
+      ]; # Cloudflare DNS
+    };
   };
   environment.etc."resolv.conf".source = "/run/systemd/resolve/stub-resolv.conf";
 
