@@ -15,5 +15,6 @@
     ./waybar
     ./wlogout
     ./yazi
+    ./zellij
   ];
 }
