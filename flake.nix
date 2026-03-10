@@ -14,6 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     yazi.url = "github:sxyazi/yazi";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs =

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./atuin
     ./dunst
     ./git
     ./gtk
@@ -9,6 +10,7 @@
     ./kitty
     ./mangohud
     ./rofi
+    ./starship
     ./vscode
     ./waybar
     ./wlogout

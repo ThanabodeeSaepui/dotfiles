@@ -14,6 +14,16 @@
     capSysNice = true;
   };
 
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      general = {
+        desiredgov = "performance";
+        defaultgov = "powersave";
+      };
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     protonup-ng
   ];

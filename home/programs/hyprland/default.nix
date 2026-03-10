@@ -148,7 +148,7 @@
         "$mainMod,V,togglefloating,"
         "$mainMod,R,exec,$menu"
         "$mainMod,P,pseudo," # dwindle
-        "$mainMod,J,togglesplit," # dwindle
+        # "$mainMod,J,togglesplit," # dwindle
 
         # Screenshot
         "$mainMod SHIFT, S, exec, ''grim -g \"$(slurp)\" - | wl-copy''"
@@ -219,9 +219,9 @@
         ",XF86AudioPrev,exec,playerctl previous"
       ];
 
-      windowrulev2 = [
-        "suppressevent maximize,class:.*"
-      ];
+      # windowrulev2 = [
+      #   "suppressevent maximize,class:.*"
+      # ];
 
     };
   };

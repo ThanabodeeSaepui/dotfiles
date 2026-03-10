@@ -13,7 +13,10 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
 
   hardware.nvidia = {
 
@@ -51,13 +54,14 @@
       enable = true;
       enableOffloadCmd = true;
     };
+    # sync.enable = true;
 
     # nix shell nixpkgs#pciutils -c lspci | grep VGA
 
     # integrated
-    intelBusId = "PCI:00:02:0";
+    intelBusId = "PCI:0:2:0";
 
     # dedicated
-    nvidiaBusId = "PCI:01:00:0";
+    nvidiaBusId = "PCI:1:0:0";
   };
 }

@@ -6,6 +6,7 @@
       enable = true;
       enableHidpi = true;
       wayland.enable = true;
+      settings.General.DisplayServer = "wayland";
     };
   };
 }

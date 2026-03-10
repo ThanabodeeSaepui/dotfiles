@@ -72,9 +72,10 @@
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
+  services.xserver.enable = true;
   services.xserver.xkb = {
     layout = "us,th";
     options = "grp:win_space_toggle"; # Super+Space to switch
@@ -141,6 +142,9 @@
   environment.systemPackages = with pkgs; [
     swww
     nixfmt-rfc-style
+
+    networkmanager
+    wireguard-tools
   ];
 
   fonts = {
