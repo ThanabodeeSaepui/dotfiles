@@ -23,6 +23,8 @@
       ./packages
       ./programs
       inputs.nix-flatpak.homeManagerModules.nix-flatpak
+      inputs.noctalia.homeModules.default
+      inputs.niri.homeModules.niri
     ];
 
     home.stateVersion = "25.05";
@@ -46,6 +48,7 @@
       })
 
       # rustdesk
+      pangolin-cli
 
       # Screenshot
       grim
@@ -59,6 +62,9 @@
 
       # vdhcoapp
       nur.repos.charmbracelet.crush
+
+      claude-code
+      opencode
     ];
 
     programs = {
@@ -66,16 +72,23 @@
       brave.enable = true;
       librewolf.enable = true;
       obs-studio.enable = true;
+
+      fuzzel.enable = true;
+      swaylock.enable = true;
+      waybar.enable = true;
     };
     services = {
       blueman-applet.enable = true;
       network-manager-applet.enable = true;
+      mako.enable = true;
+      swayidle.enable = true;
+      polkit-gnome.enable = true;
     };
 
     services.flatpak = {
       enable = true;
       update.onActivation = true;
-      # ADD THIS LINE:
+
       remotes = [
         {
           name = "flathub";
@@ -90,6 +103,7 @@
     home.sessionVariables = {
       # We use lib.mkForce to resolve the conflict
       XDG_DATA_DIRS = lib.mkForce "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
+      NIXOS_OZONE_WL = "1";
     };
   };
 }
