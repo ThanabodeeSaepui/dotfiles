@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     bat
     btop
+    duf
 
     pamixer # Pulseaudio command line mixer
     p7zip
