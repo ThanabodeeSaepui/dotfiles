@@ -1,20 +1,14 @@
 {
   imports = [
+    ./alacritty
     ./atuin
-    ./dunst
     ./git
-    ./gtk
-    ./hypridle
-    ./hyprland
-    ./hyprlock
     ./kitty
     ./mangohud
-    ./rofi
+    ./niri
+    ./noctalia-shell
     ./starship
     ./vscode
-    ./waybar
-    ./wlogout
-    ./yazi
     ./zellij
   ];
 }

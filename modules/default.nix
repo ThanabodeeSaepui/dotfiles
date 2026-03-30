@@ -3,10 +3,10 @@
     ./bluetooth.nix
     ./gaming.nix
     ./graphics.nix
-    ./hyprland.nix
+    ./niri.nix
     ./nix.nix
     ./overlay.nix
-    ./sddm.nix
+    ./noctalia.nix
     ./virtualisation.nix
   ];
 }
