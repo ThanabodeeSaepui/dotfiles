@@ -85,16 +85,33 @@
   services.printing.enable = true;
 
   services = {
-    desktopManager.plasma6.enable = true;
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          # Use tuigreet as the UI to launch niri-session
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
+          user = "greeter";
+        };
+      };
+    };
+  };
+  
+  systemd.services.greetd.serviceConfig = {
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "tty";
+    StandardError = "journal";
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
   };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   security.pam.services.sddm.enableKwallet = true;
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
   services.power-profiles-daemon.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.upower.enable = true;

@@ -20,7 +20,7 @@
 
         # Spawn
         "Mod+T".action.spawn = [ "alacritty" ];
-        "Mod+D".action.spawn = [ "fuzzel" ];
+        "Mod+D".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
         "Super+Alt+L" = {
           action.spawn = [ "swaylock" ];
           allow-inhibiting = false;

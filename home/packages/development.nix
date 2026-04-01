@@ -6,6 +6,8 @@
     rustup
     uv
 
+    devenv
+
     # LSP
     pyright # python
     typescript-language-server  # typescript
