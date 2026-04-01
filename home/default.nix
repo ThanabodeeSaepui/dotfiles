@@ -37,6 +37,8 @@
     home.packages = with pkgs; [
       # Apps
       vlc
+      kdePackages.dolphin
+      kdePackages.okular
       signal-desktop
       thunderbird
       tor
@@ -73,7 +75,6 @@
       librewolf.enable = true;
       obs-studio.enable = true;
 
-      fuzzel.enable = true;
       swaylock.enable = true;
       waybar.enable = true;
     };
@@ -100,10 +101,23 @@
       ];
     };
 
+    xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = "org.kde.okular.desktop";
+      };
+    };
+
     home.sessionVariables = {
       # We use lib.mkForce to resolve the conflict
       XDG_DATA_DIRS = lib.mkForce "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
       NIXOS_OZONE_WL = "1";
+
+      # NVIDIA Wayland - needed for Niri to see/use NVIDIA GPU
+      GBM_BACKEND = "nvidia-drm";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      LIBVA_DRIVER_NAME = "nvidia";
+      WLR_NO_HARDWARE_CURSORS = "1";
     };
   };
 }
