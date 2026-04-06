@@ -65,8 +65,11 @@
       # vdhcoapp
       nur.repos.charmbracelet.crush
 
-      claude-code
+      # claude-code
       opencode
+
+      lsfg-vk
+      lsfg-vk-ui
     ];
 
     programs = {
@@ -75,7 +78,6 @@
       librewolf.enable = true;
       obs-studio.enable = true;
 
-      swaylock.enable = true;
       waybar.enable = true;
     };
     services = {

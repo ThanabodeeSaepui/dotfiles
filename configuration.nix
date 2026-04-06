@@ -90,7 +90,7 @@
       settings = {
         default_session = {
           # Use tuigreet as the UI to launch niri-session
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
           user = "greeter";
         };
       };
