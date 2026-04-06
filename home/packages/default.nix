@@ -2,6 +2,7 @@
 {
   imports = [
     ./development.nix
+    ./direnv.nix
     ./fzf.nix
     ./zoxide.nix
     ./zsh.nix

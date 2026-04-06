@@ -19,10 +19,10 @@
         "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
 
         # Spawn
-        "Mod+T".action.spawn = [ "alacritty" ];
+        "Mod+T".action.spawn = [ "kitty" ];
         "Mod+D".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
         "Super+Alt+L" = {
-          action.spawn = [ "swaylock" ];
+          action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "lock"  ];
           allow-inhibiting = false;
         };
 
