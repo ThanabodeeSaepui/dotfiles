@@ -10,6 +10,13 @@
           layout = "us,th";
           options = "grp:win_space_toggle";
         };
+        touchpad = {
+          tap = true;
+          click-method = "button-areas";
+        };
+        mouse = {
+          middle-emulation = true;
+        };
       };
       spawn-at-startup = [
         { argv = [ "noctalia-shell" ]; }
@@ -20,9 +27,21 @@
 
         # Spawn
         "Mod+T".action.spawn = [ "kitty" ];
-        "Mod+D".action.spawn = [ "noctalia-shell" "ipc" "call" "launcher" "toggle" ];
+        "Mod+D".action.spawn = [
+          "noctalia-shell"
+          "ipc"
+          "call"
+          "launcher"
+          "toggle"
+        ];
         "Super+Alt+L" = {
-          action.spawn = [ "noctalia-shell" "ipc" "call" "lockScreen" "lock"  ];
+          action.spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "lockScreen"
+            "lock"
+          ];
           allow-inhibiting = false;
         };
 
