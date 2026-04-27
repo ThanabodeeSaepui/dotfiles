@@ -1,8 +1,10 @@
 {
   imports = [
     ./atuin
+    ./delta
     ./git
     ./kitty
+    ./lazygit
     ./mangohud
     ./niri
     ./noctalia-shell

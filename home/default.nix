@@ -37,8 +37,6 @@
     home.packages = with pkgs; [
       # Apps
       vlc
-      kdePackages.dolphin
-      kdePackages.okular
       signal-desktop
       thunderbird
       tor
@@ -81,7 +79,6 @@
       waybar.enable = true;
     };
     services = {
-      blueman-applet.enable = true;
       network-manager-applet.enable = true;
       mako.enable = true;
       swayidle.enable = true;
@@ -100,6 +97,10 @@
       ];
       packages = [
         "com.rustdesk.RustDesk"
+        "org.onlyoffice.desktopeditors"
+        "org.kde.okular"
+        "org.kde.dolphin"
+        "org.kde.filelight"
       ];
     };
 
@@ -120,6 +121,8 @@
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       LIBVA_DRIVER_NAME = "nvidia";
       WLR_NO_HARDWARE_CURSORS = "1";
+
+      QT_QPA_PLATFORMTHEME= "gtk3";
     };
   };
 }

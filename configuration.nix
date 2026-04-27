@@ -96,7 +96,7 @@
       };
     };
   };
-  
+
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
     StandardInput = "tty";
@@ -138,12 +138,17 @@
 
   services.resolved = {
     enable = true;
-    settings.Resolve = {
-      DNSSEC = "allow-downgrade";
-      FallbackDNS = [
-        "1.1.1.1"
-        "1.0.0.1"
-      ]; # Cloudflare DNS
+    settings = {
+      Resolve = {
+        DNS = [
+          "45.90.28.0#77579d.dns.nextdns.io"
+          "2a07:a8c0::#77579d.dns.nextdns.io"
+          "45.90.30.0#77579d.dns.nextdns.io"
+          "2a07:a8c1::#77579d.dns.nextdns.io"
+        ];
+        DNSSEC = "true";
+        DNSOverTLS = "true";
+      };
     };
   };
   environment.etc."resolv.conf".source = "/run/systemd/resolve/stub-resolv.conf";
