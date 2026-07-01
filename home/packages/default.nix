@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./bun.nix
     ./development.nix
     ./direnv.nix
     ./fzf.nix

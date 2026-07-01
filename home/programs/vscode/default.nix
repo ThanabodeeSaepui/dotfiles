@@ -18,8 +18,8 @@
 
         # Language Server
         rust-lang.rust-analyzer
-        ms-python.python
-        ms-python.debugpy
+        # ms-python.python
+        # ms-python.debugpy
       ];
 
       userSettings = {
