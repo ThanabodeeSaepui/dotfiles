@@ -10,6 +10,7 @@
     ./noctalia-shell
     ./starship
     ./vscode
+    ./zed
     ./zellij
   ];
 }
