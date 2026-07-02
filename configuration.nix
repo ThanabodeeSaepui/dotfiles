@@ -180,6 +180,7 @@
     nixfmt-rfc-style
 
     networkmanager
+    netbird
     wireguard-tools
 
     xwayland-satellite
