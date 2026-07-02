@@ -30,7 +30,8 @@
         "Mod+D".action.spawn = [
           "noctalia"
           "msg"
-          "launcher-toggle"
+          "panel-toggle"
+          "launcher"
         ];
         "Super+Alt+L" = {
           action.spawn = [
