@@ -47,6 +47,8 @@
         withVencord = true;
       })
 
+      netbird
+
       # rustdesk
       pangolin-cli
 

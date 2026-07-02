@@ -19,7 +19,7 @@
         };
       };
       spawn-at-startup = [
-        { argv = [ "noctalia-shell" ]; }
+        { argv = [ "noctalia" ]; }
       ];
       hotkey-overlay.skip-at-startup = false;
       binds = {
@@ -28,18 +28,15 @@
         # Spawn
         "Mod+T".action.spawn = [ "kitty" ];
         "Mod+D".action.spawn = [
-          "noctalia-shell"
-          "ipc"
-          "call"
-          "launcher"
-          "toggle"
+          "noctalia"
+          "msg"
+          "launcher-toggle"
         ];
         "Super+Alt+L" = {
           action.spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "lockScreen"
+            "noctalia"
+            "msg"
+            "session"
             "lock"
           ];
           allow-inhibiting = false;
