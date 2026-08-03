@@ -101,6 +101,9 @@
         "org.kde.okular"
         "org.kde.dolphin"
         "org.kde.filelight"
+        "com.vysp3r.ProtonPlus"
+        "org.freecad.FreeCAD"
+        "com.nextcloud.desktopclient.nextcloud"
       ];
     };
 

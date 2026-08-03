@@ -1,3 +1,4 @@
+{ ... }:
 {
   programs.zed-editor = {
     enable = true;
@@ -7,14 +8,15 @@
     ];
 
     userSettings = {
-        "workbench.iconTheme" = "material-icon-theme";
-        "terminal.integrated.defaultProfile.linux" = "zsh (login)";
-        "terminal.integrated.profiles.linux" = {
-          "zsh (login)" = {
-            path = "zsh";
+      "workbench.iconTheme" = "material-icon-theme";
+      terminal = {
+        shell = {
+          with_arguments = {
+            program = "zsh";
             args = [ "-l" ];
           };
         };
       };
+    };
   };
 }
