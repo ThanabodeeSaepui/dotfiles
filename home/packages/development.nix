@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     # Bun JavaScript runtime and package manager
-    rustup
     uv
 
     devenv
