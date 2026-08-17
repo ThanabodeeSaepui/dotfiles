@@ -26,7 +26,7 @@
         "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
 
         # Spawn
-        "Mod+T".action.spawn = [ "kitty" ];
+        "Mod+T".action.spawn = [ "ghostty" ];
         "Mod+D".action.spawn = [
           "noctalia"
           "msg"
