@@ -2,8 +2,8 @@
   imports = [
     ./atuin
     ./delta
+    ./ghostty
     ./git
-    ./kitty
     ./lazygit
     ./mangohud
     ./niri
