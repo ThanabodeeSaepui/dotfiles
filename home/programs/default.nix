@@ -8,6 +8,7 @@
     ./mangohud
     ./niri
     ./noctalia-shell
+    ./omp
     ./starship
     ./vscode
     ./zed

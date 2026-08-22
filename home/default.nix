@@ -25,6 +25,7 @@
       inputs.nix-flatpak.homeManagerModules.nix-flatpak
       inputs.noctalia.homeModules.default
       inputs.niri.homeModules.niri
+      inputs.omp.homeManagerModules.default
     ];
 
     home.stateVersion = "25.05";
@@ -133,7 +134,7 @@
       LIBVA_DRIVER_NAME = "nvidia";
       WLR_NO_HARDWARE_CURSORS = "1";
 
-      QT_QPA_PLATFORMTHEME= "gtk3";
+      QT_QPA_PLATFORMTHEME = "gtk3";
     };
   };
 }

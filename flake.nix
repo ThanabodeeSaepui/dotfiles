@@ -23,6 +23,8 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    omp.url = "github:can1357/oh-my-pi";
   };
 
   outputs =
