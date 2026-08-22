@@ -6,9 +6,12 @@
     settings = {
       input = {
         mod-key = "Super";
-        keyboard.xkb = {
-          layout = "us,th";
-          options = "grp:win_space_toggle";
+        keyboard = {
+          numlock = true;
+          xkb = {
+            layout = "us,th";
+            options = "grp:win_space_toggle";
+          };
         };
         touchpad = {
           tap = true;

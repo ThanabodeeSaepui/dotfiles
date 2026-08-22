@@ -5,6 +5,7 @@
       user.email = "ThanabodeeSaepui";
       user.name = "thanabodee.saepui@gmail.com";
       init.defaultBranch = "main";
+      pull.rebase = true;
     };
   };
 }
