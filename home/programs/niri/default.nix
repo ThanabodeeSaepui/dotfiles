@@ -4,6 +4,10 @@
     enable = true;
     package = pkgs.niri-unstable;
     settings = {
+      cursor = {
+        theme = "Bibata-Modern-Classic";
+        size = 24;
+      };
       input = {
         mod-key = "Super";
         keyboard = {
