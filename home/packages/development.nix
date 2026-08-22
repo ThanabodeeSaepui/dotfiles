@@ -8,7 +8,7 @@
 
     # LSP
     pyright # python
-    typescript-language-server  # typescript
+    typescript-language-server # typescript
     nil # nix
   ];
 }

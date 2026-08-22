@@ -1,7 +1,7 @@
 {
   programs.hyprlock = {
     enable = true;
-    
+
     settings = {
       # Background configuration
       # background = [
@@ -12,12 +12,12 @@
       #     brightness = 0.5;
       #   }
       # ];
-      
+
       # General settings
       general = {
         ignore_empty_input = true;
       };
-      
+
       # Input field configuration
       input-field = [
         {
@@ -41,7 +41,7 @@
           valign = "center";
         }
       ];
-      
+
       # Profile picture
       image = [
         {
@@ -55,7 +55,7 @@
           valign = "center";
         }
       ];
-      
+
       # Labels for date, time, and welcome message
       label = [
         # Date label
