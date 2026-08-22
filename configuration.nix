@@ -90,7 +90,7 @@
       settings = {
         default_session = {
           # Use tuigreet as the UI to launch niri-session
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --numlock --cmd niri-session";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
           user = "greeter";
         };
       };
@@ -177,7 +177,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
 
     networkmanager
     netbird
