@@ -10,6 +10,7 @@
     ./security.nix
     ./ssh.nix
     ./noctalia.nix
+    ./noctalia-greeter.nix
     ./virtualisation.nix
   ];
 }
