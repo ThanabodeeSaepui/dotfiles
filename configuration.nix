@@ -84,29 +84,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  services = {
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          # Use tuigreet as the UI to launch niri-session
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
-          user = "greeter";
-        };
-      };
-    };
-  };
-
-  systemd.services.greetd.serviceConfig = {
-    Type = "idle";
-    StandardInput = "tty";
-    StandardOutput = "tty";
-    StandardError = "journal";
-    TTYReset = true;
-    TTYVHangup = true;
-    TTYVTDisallocate = true;
-  };
-
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
