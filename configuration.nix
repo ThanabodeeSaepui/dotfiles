@@ -159,9 +159,25 @@
     networkmanager
     netbird
     wireguard-tools
+    cifs-utils
 
     xwayland-satellite
   ];
+
+  fileSystems."/mnt/easyacc" = {
+    device = "//10.171.20.240/easyacc";
+    fsType = "cifs";
+    options = [
+      "credentials=/etc/samba/easyacc-credentials"
+      "uid=1000"
+      "gid=100"
+      "vers=3.1.1"
+      "_netdev"
+      "x-systemd.automount"
+      "noauto"
+      "nofail"
+    ];
+  };
 
   fonts = {
     enableDefaultPackages = true;
