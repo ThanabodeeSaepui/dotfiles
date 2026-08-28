@@ -106,6 +106,9 @@
         "org.freecad.FreeCAD"
         "com.nextcloud.desktopclient.nextcloud"
       ];
+      overrides.settings."org.kde.dolphin".Context.filesystems = [
+        "/mnt/easyacc:rw"
+      ];
     };
 
     dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
