@@ -62,7 +62,7 @@
       bibata-cursors
 
       # vdhcoapp
-      nur.repos.charmbracelet.crush
+      # nur.repos.charmbracelet.crush
 
       # claude-code
       opencode
