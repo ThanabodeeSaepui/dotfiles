@@ -16,6 +16,11 @@
             args = [ "-l" ];
           };
         };
+        font_family = "JetBrainsMono Nerd Font Mono";
+        font_fallbacks = [
+          "Noto Sans Thai"
+          "Sarabun"
+        ];
       };
     };
   };
