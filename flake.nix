@@ -13,7 +13,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    yazi.url = "github:sxyazi/yazi";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
@@ -23,7 +22,6 @@
       nixpkgs,
       nur,
       home-manager,
-      yazi,
       ...
     }@inputs:
     let

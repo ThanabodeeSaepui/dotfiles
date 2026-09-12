@@ -14,7 +14,6 @@
     ./vscode
     ./waybar
     ./wlogout
-    ./yazi
     ./zellij
   ];
 }
