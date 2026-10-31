@@ -141,6 +141,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "video"
     ];
     packages = with pkgs; [ ];
   };
@@ -153,6 +154,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  # 90-brightnessctl.rules: chgrp video + g+w on /sys/class/backlight/*/brightness
+  services.udev.packages = [ pkgs.brightnessctl ];
+
   environment.systemPackages = with pkgs; [
     nixfmt
 

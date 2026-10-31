@@ -58,6 +58,9 @@
       # Clipboard
       wl-clipboard
 
+      # Brightness (XF86MonBrightnessUp/Down in niri)
+      brightnessctl
+
       # Cursor
       bibata-cursors
 
@@ -98,7 +101,7 @@
       ];
       packages = [
         "com.rustdesk.RustDesk"
-        "org.onlyoffice.desktopeditors"
+        "org.libreoffice.LibreOffice"
         "org.kde.okular"
         "org.kde.dolphin"
         "org.kde.filelight"
