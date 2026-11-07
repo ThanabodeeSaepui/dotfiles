@@ -5,7 +5,7 @@
   programs.noctalia-greeter = {
     enable = true;
     settings = {
-      session.default = "Niri";
+      session.default = "Umbriel";
       keyboard.layout = "us,th";
     };
   };

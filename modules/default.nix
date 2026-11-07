@@ -4,7 +4,7 @@
     ./gaming.nix
     ./graphics.nix
     ./netbird.nix
-    ./niri.nix
+    ./umbriel.nix
     ./nix.nix
     ./overlay.nix
     ./security.nix

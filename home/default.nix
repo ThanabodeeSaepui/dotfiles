@@ -24,7 +24,7 @@
       ./programs
       inputs.nix-flatpak.homeManagerModules.nix-flatpak
       inputs.noctalia.homeModules.default
-      inputs.niri.homeModules.niri
+      inputs.umbriel.homeModules.default
       inputs.omp.homeManagerModules.default
     ];
 
@@ -58,7 +58,7 @@
       # Clipboard
       wl-clipboard
 
-      # Brightness (XF86MonBrightnessUp/Down in niri)
+      # Brightness (XF86MonBrightnessUp/Down keybinds)
       brightnessctl
 
       # Cursor
@@ -68,7 +68,7 @@
       # nur.repos.charmbracelet.crush
 
       # claude-code
-      opencode
+      # opencode
 
       lsfg-vk
       lsfg-vk-ui
@@ -101,7 +101,8 @@
       ];
       packages = [
         "com.rustdesk.RustDesk"
-        "org.libreoffice.LibreOffice"
+        # "org.libreoffice.LibreOffice"
+        "org.onlyoffice.desktopeditors"
         "org.kde.okular"
         "org.kde.dolphin"
         "org.kde.filelight"
@@ -142,7 +143,7 @@
       XDG_DATA_DIRS = lib.mkForce "$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share";
       NIXOS_OZONE_WL = "1";
 
-      # NVIDIA Wayland - needed for Niri to see/use NVIDIA GPU
+      # NVIDIA Wayland - needed for the compositor to see/use the NVIDIA GPU
       GBM_BACKEND = "nvidia-drm";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       LIBVA_DRIVER_NAME = "nvidia";

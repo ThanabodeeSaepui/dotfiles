@@ -6,7 +6,7 @@
     ./git
     ./lazygit
     ./mangohud
-    ./niri
+    ./umbriel
     ./noctalia-shell
     ./omp
     ./starship

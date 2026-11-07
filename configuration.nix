@@ -164,8 +164,6 @@
     netbird
     wireguard-tools
     cifs-utils
-
-    xwayland-satellite
   ];
 
   fileSystems."/mnt/easyacc" = {

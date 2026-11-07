@@ -12,10 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Track the cached branch; do not add `inputs.nixpkgs.follows`, or store
+    # paths stop matching umbriel.cachix.org.
+    umbriel.url = "github:noctalia-dev/umbriel/cachix";
+
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     noctalia = {
