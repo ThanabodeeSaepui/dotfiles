@@ -30,6 +30,8 @@
         touchpad = {
           tap = true;
           click_method = "button_areas";
+          # Traditional scrolling: content moves opposite the finger travel.
+          natural_scroll = true;
         };
         cursor = {
           theme = "Bibata-Modern-Classic";
