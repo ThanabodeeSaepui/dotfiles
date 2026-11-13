@@ -92,6 +92,8 @@
   services.power-profiles-daemon.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.upower.enable = true;
+  # Firmware updates via fwupd/LVFS (BIOS, SSD, docks, …).
+  services.fwupd.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
